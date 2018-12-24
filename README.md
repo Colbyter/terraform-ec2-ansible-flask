@@ -1,2 +1,2 @@
 # terraform-aws-flask
-Creates EC2 instance with basic Security Group police to host flask application
+Creates EC2 instance with basic Security Group policy to host flask application
