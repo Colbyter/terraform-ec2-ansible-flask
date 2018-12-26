@@ -1,0 +1,29 @@
+---
+- hosts: all
+  become: True
+  remote_user: ubuntu
+  tasks:
+  - name: Update linux
+    become: True
+    become_method: sudo
+    remote_user: ubuntu
+    raw: apt update  && apt install -y python3 python3-pip
+  
+  - name: Install Flask
+    become: True
+    become_method: sudo
+    remote_user: ubuntu
+    pip:
+      name: 
+        - flask
+        -  ansible
+      state: latest
+      
+  - name: Running python app
+    become: True
+    become_method: sudo
+    remote_user: ubuntu
+    shell: nohup python3 test.py &
+
+
+
