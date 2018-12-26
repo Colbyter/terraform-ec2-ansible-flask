@@ -50,7 +50,6 @@ provisioner "local-exec" {
    command  = "sleep 30; ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -v -i '${self.public_ip},' --key-file ../terr.pem ./ansible/config.yml -e 'ansible_python_interpreter=/usr/bin/python3'"
 }
 
-
 }
 
 
